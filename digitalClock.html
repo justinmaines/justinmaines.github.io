@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Digital Clock</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+$(document).ready(function(){
+	function digiClock(){
+  var time = new Date();
+  var hours = time.getHours();
+  var minutes = time.getMinutes();
+  var seconds = time.getSeconds();
+  if (hours > 12) {
+    hours = hours - 12;
+  }
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+  document.getElementById("clockTime").innerHTML = hours + ":" + minutes;
+}
+  setTimeout(digiClock, 1);
+  setInterval(digiClock, 10000);
+});
+	</script>
+	<style type="text/css">
+		.outerClock {
+  border-style: solid;
+  border-color: #878787;
+  width: 60%;
+  margin: auto;
+  margin-top: 100px;
+  background-color: #878787;
+  border-radius: 10px;
+}
+.innerClock {
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  background-color: black;
+  width: 95%;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-bottom: ;
+}
+@font-face{
+ font-family:'digital-clock-font';
+ src: url('digital-7.ttf');
+}
+#clockTime{
+  font-family: ;
+  color: red;
+  font-size: 250px;
+  width: 90%;
+  text-align: right;
+  margin: auto;
+}
+	</style>
+</head>
+<body>
+<div class = "outerClock">
+  <div class = "innerClock">
+    <h1 id = "clockTime"></h1>
+  </div> <!-- innerClock -->
+</div> <!-- outerClock --> 
+</body>
+</html>

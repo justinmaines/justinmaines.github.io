@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>Local Weather</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+  var lat;
+  var lon;
+  $.getJSON("http://ip-api.com/json",function(data2){
+    lat= data2.lat;
+    lon = data2.lon;
+     $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=a44f42d7b89f9481e22b5327258e8e27", function(data){
+    var CityName = data.name;
+      var temp = data.main.temp.toFixed(1);
+      var tempSwap = true;
+      var conditions = data.weather[0].main;
+      var windSpeed = data.wind.speed.toFixed(1);
+      var fTemp = ((temp)*(9/5)-459.67).toFixed(1);
+      var cTemp = (temp - 273).toFixed(1);
+      windSpeed = (2.237*(windSpeed)).toFixed(1);
+      $("#cityName").html(CityName);
+      $("#temp").html(fTemp + "&#8457");
+      $("#conditions").html(conditions);
+      $("#windSpeed").html(windSpeed + " mph");
+      $(".temperature").click(function(){
+        
+        if(tempSwap === false){
+          $("#temp").html(fTemp + "&#8457");
+ 
+          tempSwap = true;
+        } else {
+           $("#temp").html(cTemp + "&#8451");
+          tempSwap = false;
+        }
+        
+          
+      });
+      if(fTemp > 80){
+        $("body").css("background-image", "url(http://www.mrwallpaper.com/wallpapers/blue-sunny-sky.jpg)");
+      } else if(fTemp > 65){
+        $("body").css("background-image", "url(http://hd-wall-papers.com/images/wallpapers/sky-wallpapers/sky-wallpapers-16.jpg)")
+      } else if(fTemp > 50){
+        $("body").css("background-image", "url(http://wallpapercave.com/wp/jTurdao.jpg)")
+      } else if(fTemp > 35){
+               $("body").css("background-image", "url(http://www.drodd.com/images14/snow-wallpaper4.jpg)");
+      } else {
+         $("body").css("background-image", "url(http://www.drodd.com/images14/snow-wallpaper8.jpg)")
+      }
+    });
+    });
+   
+});  
+	</script>
+	<style type="text/css">
+		body {
+  background-color: ;
+}
+.title {
+  text-align: center;
+  font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+  border-radius: 13px;
+  background-color: #5b5b5b;
+  width: 25%;
+  margin: auto;
+  color: white;
+  padding-top: .1em;
+  padding-bottom: .1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.location {
+  border-radius: 13px;
+  background-color: gray;
+  width: 30%;
+  text-align: center;
+  margin: auto;
+  padding: 3px;
+  padding-bottom: 10px;
+}
+.location h2 {
+  font-size: 42px;
+  color: white;
+}
+.info {
+  text-align: center;
+  padding: 10px;
+}
+h3 {
+	text-align: center;
+  border-style: white;
+  background-color: white;
+  width: 50%;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 10px;
+}
+
+	</style>
+</head>
+<body>
+<div class = "container-fluid">
+  <div class = "title">
+    <h1> Local Weather </h1>
+  </div> <!-- title --> 
+  <div class = location>
+    <h2 id = "cityName"> Unable to retrieve information </h2>
+  </div> <!-- location -->
+    <div class = "info">
+  <div class = "temperature btn btn-default">
+    <h4 id = "temp">  Unable to retrieve information </h4>
+    
+    </div> <!-- temperature -->
+      <div class = "conditions btn btn-default">
+        <h4 id = "conditions"> Unable to retrieve information </h4>
+      </div> <!-- conditions -->
+<div class = "wind btn btn-default">
+  <h4 id = "windSpeed">  Unable to retrieve information </h4>
+      </div> <!-- wind -->
+      
+  </div> <!-- info -->
+  <h3><B>If this fails to work, you can see a working verson on <a href="http://codepen.io/justinmaines/full/oBpgqN/" target="blank">Codepen</a></B></h3>
+</div> <!-- container fluid --> 
+
+</body>
+</html>
