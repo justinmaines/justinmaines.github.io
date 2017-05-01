@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Scoot Squad</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/scoot.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</head>
+<body>
+<div class = "nav">
+<ul class = "navbar">
+	<li><a href="#home">Home</a></li>	
+	<li><a href="#about">About Us</a></li>	
+	<li><a href="#youtube">YouTube</a></li>	
+	<li><a href="#members">Members</a></li>	
+	<li><a href="#slideshow">Pictures</a></li>	
+</ul> 
+</div>
+<div class = "content" id = "home">
+</div>
+<div class = main>
+<div class = "aboutUs" id = "about">
+<h1>About Us</h1>
+<div class = "row" id = "aboutRow">
+<p class = "col-md-5">Scoot Squad is a group of 5 kids from Pennsylvania that enjoy making entertaining content for all to enjoy. Our first video was made in September of 2016, and we've been making videos ever since.</p>
+<img src="images/logo.jpg" class = "col-xs-3">
+</div>
+</div>
+<div class = "youtube" id = "youtube">
+<h1>YouTube</h1>
+<div class = "row" id = "youtubeRow">
+<iframe width="400" height="275" src="https://www.youtube.com/embed/9_bcywSOsgY" frameborder="0" allowfullscreen class = "col-md-6"></iframe>
+<p class = "col-md-4">Our YouTube channel was created in late 2016 and we have grown to have 300+ subscribers with over 15,000 video views. Creating videos is a hobby that every "Scoot Squad" member enjoys, and we hope to make more videos with better quality. </p>
+</div>
+</div>
+<div class = "members" id = "members">
+<h1>Members</h1>
+<div class="card">
+  <img src="images/justin.jpg" alt="Justin" style="width:100%">
+  <div class="container">
+    <h1>Justin Maines</h1>
+    <p class="title">CEO & Founder</p>
+    <a href="https://instagram.com/justin.maines" target="blank"><i class="fa fa-instagram"></i></a> 
+    <a href="https://twitter.com/jmaines7" target="blank"><i class="fa fa-twitter"></i></a> 
+  </div>
+</div>
+
+
+<div class="card">
+  <img src="images/hayden.jpg" alt="Justin" style="width:100%">
+  <div class="container">
+    <h1>Hayden Williams</h1>
+    <p class="title">COO & Editor</p>
+    <a href="https://instagram.com/haywill_" target="blank"><i class="fa fa-instagram"></i></a> 
+    <a href="https://twitter.com/thehaywill" target="blank"><i class="fa fa-twitter"></i></a> 
+  </div>
+</div>
+
+
+<div class="card">
+  <img src="images/harry.jpg" alt="Justin" style="width:100%">
+  <div class="container">
+    <h1>Harrison Peacock</h1>
+    <p class="title">CFO & Stud</p>
+    <a href="https://instagram.com/hpeacock_10" target="blank"><i class="fa fa-instagram"></i></a> 
+    <a href="https://twitter.com/harry_peacock10" target="blank"><i class="fa fa-twitter"></i></a> 
+  </div>
+</div>
+
+
+<div class="card">
+  <img src="images/nate.jpg" alt="Justin" style="width:100%">
+  <div class="container">
+    <h1>Nate<br>Barr</h1>
+    <p class="title">CMO & Legend</p>
+    <a href="https://instagram.com/nathanbarr24" target="blank"><i class="fa fa-instagram"></i></a> 
+    <a href="https://twitter.com/nathanbarr24" target="blank"><i class="fa fa-twitter"></i></a> 
+  </div>
+</div>
+
+
+<div class="card">
+  <img src="images/matt.jpg" alt="Justin" style="width:100%">
+  <div class="container">
+    <h1>Matt<br>Pallo</h1>
+    <p class="title">CVO & Retard</p>
+    <a href="https://instagram.com/matt.pallo" target="blank"><i class="fa fa-instagram"></i></a> 
+  </div>
+</div>
+
+
+</div>
+<div class = "slideshow" id = "slideshow">
+	<h1>Pictures</h1>
+	<p>We take pictures occasionally, check our <a href="https://instagram.com/scootsquad100" target="blank">Instagram</a></p>
+	<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    
+    <div class="numbertext">1 / 3</div>
+    <img src="images/matt.jpg" style="width:100%; display: inline;">
+    <div class="text">Matt</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="images/justin.jpg" style="width:100%">
+    <div class="text">Justin</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="images/harry.jpg" style="width:100%">
+    <div class="text">Harrison (Matt & Justin)</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+</div>
+
+
+
+</div> <!-- main -->
+
+</body>
+</html>
