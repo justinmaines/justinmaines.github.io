@@ -6,9 +6,9 @@
 
 <script type="text/javascript">
 function openMenu() {
-	document.getElementById("menucontents").style.width = "350px";
+	document.getElementById("menucontents").style.width = "400px";
 	 document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-	 document.socialMediaButtons.style.opacity = "0.5";
+	 document.getElementByID("LinkedIn").style.opacity = "0.5";
 }
 function closeMenu() {
 	document.getElementById("menucontents").style.width = "0";
@@ -182,9 +182,9 @@ a {
 		<a href = "JustinMainesResume.pdf" target="blank">Resume</a> 	
 		<a href = "CrimeViz.html" target="blank">Pittsbrugh Crime</a> 	
 		<a href = "https://my.up.ist.psu.edu/jtm5948/leaflet/index.html" target="blank">State College Crime</a> 	
-		<a href = "scoot.html" target="blank">Stock Market Prediction</a>
-		<a href = "scoot.html" target="blank">House Price Regression</a> 
-		<a href = "scoot.html" target="blank">Dog Breed Identification</a>
+		<a href = "https://github.com/justinmaines/StockMarketPrediction" target="blank">Stock Market Prediction</a>
+		<a href = "https://github.com/justinmaines/HousePriceRegression" target="blank">House Price Regression</a> 
+		<a href = "https://github.com/justinmaines/DogBreedIdentification" target="blank">Dog Breed Identification</a>
 	</div>	<!-- menuContents -->
 <h1 onclick="openMenu()" class = "menuButton">&#9776;</h1>
 <div class = "aboutMe">
@@ -195,7 +195,7 @@ a {
 	<p>I was born and raised in Clearfield, a small town in west-central Pennsylvania</p>
 <h2>Check out my LinkedIn:</h2>
 <div class = "socialMediaButtons">
-<a href = "http://www.linkedin.com/in/justin-maines-29a730129/" class = "fa fa-linkedin" target="blank"></a>
+<a href = "http://www.linkedin.com/in/justin-maines-29a730129/" class = "fa fa-linkedin" target="blank" id="LinkedIn"></a>
 </div>
 </div>
 </div> <!-- aboutMe -->
