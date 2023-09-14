@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pittsburgh Crime Visualization</title>
+  </head>
+  <style type="text/css">
+    body {
+      text-align: center;
+      margin: 2em 2em 2em 2em;
+      font-family: sans-serif;
+      letter-spacing: 0.05em;
+    }
+    iframe {
+      display: block;
+      margin: 0 auto;
+      border-style: solid;
+      border-width: 0.2em;
+    }
+
+    a {
+      color: black;
+      text-decoration: underline;
+    }
+    a:hover {
+      font-weight: bold;
+    }
+  </style>
+  <body>
+    <h1>Pittsburgh Crime Visualization Project</h1>
+    <p>For my Data Visualization class at Penn State, I chose to work on mapping crime incidents reported in the Greater Pittsburgh area. For this project, I drew inspiration from a prior class assignment mapping State College crime data using the Leaflet JavaScript library, which can be found <a href="https://my.up.ist.psu.edu/jtm5948/leaflet/index.html" target="blank">here</a>. This webpage will provide a brief overview on the techniques and technologies used to accomplish the final product, shown in the video at the end of this page.</p>
+    <h2>Data Collection, Cleaning, and Transforming</h2>
+    <p>The data for this project was downloaded from the Western Pennsylvnia Regional Data Center (WPRDC) <a href="https://data.wprdc.org/dataset/", target="blank">website</a>. Two datasets were downloaded, historical and past 30 days. The data was in csv format, and loaded into R. To start, data was filtered to only include entries from 2022, blank rows and rows without location information were dropped, and column names were changed for a clearer table. After this, the two tables were appended together to get a full view of the data. The final step was creating logic to generalize category names. In the original data, there were many category descriptions describing the same type of incident, so generalizing these made it manageable to sort by category. The new data table was then exported to a csv file to use in Tableau. An R notebook with the code used for data processing can be found <a href="Data-Processing.html" target="blank">here</a></p>
+    <h2>Tableau Visualization</h2>
+    <p>After the data processing was complete, the new file was imported to a Tableau Workbook. The features of the data had to be set to the right format (e.g. Geolocation > Latitude for Latitude variable), then the map visualization was used. For a cleaner finish and greater interactivity, Mapbox was used to add an OpenStreetView map to the background, showing roads, town names, and giving users the ability to easily zoom and move the map. Two maps were created, one with an individual point for each incident, the other displaying a count of incidents, creating a density map. Interactive filters were added, allowing users to view only certain months, sort by category, or a combination of the two. Tableau's student plan does not include access to Cloud or Server, so the workbook cannot be published. Below is a video demonstration of the two maps to show the work that was completed.</p>
+    <iframe height="700em" width="80%" src="https://www.youtube.com/embed/qKBz7Wz0A4A?si=WN-97SxnIshYhPZX">
+    </iframe>
+  </body>
+</html>
